@@ -1,4 +1,3 @@
-
 export interface InputField {
   id: string;
   label: string;
@@ -16,7 +15,7 @@ export interface TaskOption {
 }
 
 export interface TaskCategory {
-  id: string;
+  id:string;
   label: string;
   tasks: TaskOption[];
 }
@@ -30,4 +29,9 @@ export interface ReferencePrompt {
     text: string;
     url?: string;
   };
+}
+
+export interface ReferenceMaterial {
+  title: string;
+  url: string;
 }
