@@ -11,6 +11,7 @@ const Header: React.FC = () => {
         <p className="text-sm text-slate-500 mt-1">
           知的財産業務に特化した高品質なプロンプトを簡単作成
         </p>
+        <p>このアプリのソースコードはこちら: https://github.com/niship2/ip-prompt-generator</p>
       </div>
     </header>
   );
