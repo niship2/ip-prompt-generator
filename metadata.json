@@ -1,0 +1,5 @@
+{
+  "name": "IP Prompt Generator for LLMs",
+  "description": "An application to generate specialized prompts for Large Language Models (LLMs) to assist with various intellectual property (IP) tasks. Users can select from a structured menu of IP operations and provide key information to create a tailored, effective prompt.",
+  "requestFramePermissions": []
+}
