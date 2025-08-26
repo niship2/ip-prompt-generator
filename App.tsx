@@ -4,8 +4,9 @@ import PromptGenerator from './components/PromptGenerator';
 import PromptReference from './components/PromptReference';
 import Navigation from './components/Navigation';
 import ReferenceMaterials from './components/ReferenceMaterials';
+import PromptPolisher from './components/PromptPolisher';
 
-type View = 'generator' | 'reference' | 'materials';
+type View = 'generator' | 'polisher' | 'reference' | 'materials';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('generator');
@@ -16,6 +17,7 @@ const App: React.FC = () => {
       <Navigation currentView={view} setView={setView} />
       <main className="container mx-auto px-4 py-8">
         {view === 'generator' && <PromptGenerator />}
+        {view === 'polisher' && <PromptPolisher />}
         {view === 'reference' && <PromptReference />}
         {view === 'materials' && <ReferenceMaterials />}
       </main>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-type View = 'generator' | 'reference' | 'materials';
+type View = 'generator' | 'polisher' | 'reference' | 'materials';
 
 interface NavigationProps {
   currentView: View;
@@ -13,6 +13,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentView, setView }) => {
 
   const tabs: { view: View; label: string }[] = [
     { view: 'generator', label: 'プロンプト生成' },
+    { view: 'polisher', label: 'プロンプトブラッシュアップ' },
     { view: 'reference', label: 'プロンプト参考集' },
     { view: 'materials', label: '参考資料' },
   ];

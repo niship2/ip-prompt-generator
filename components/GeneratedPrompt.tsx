@@ -1,14 +1,16 @@
-
 import React, { useState } from 'react';
 import ClipboardIcon from './icons/ClipboardIcon';
 import CheckIcon from './icons/CheckIcon';
 
 interface GeneratedPromptProps {
   prompt: string;
+  placeholder?: string;
+  children?: React.ReactNode;
 }
 
-const GeneratedPrompt: React.FC<GeneratedPromptProps> = ({ prompt }) => {
+const GeneratedPrompt: React.FC<GeneratedPromptProps> = ({ prompt, placeholder, children }) => {
   const [isCopied, setIsCopied] = useState(false);
+  const defaultPlaceholder = '左のメニューから業務を選択し、情報を入力してください。';
 
   const handleCopy = () => {
     if (!prompt) return;
@@ -21,7 +23,13 @@ const GeneratedPrompt: React.FC<GeneratedPromptProps> = ({ prompt }) => {
     <div className="h-full flex flex-col">
       <div className="relative flex-grow">
         <pre className="w-full h-full p-4 bg-slate-100 rounded-md text-sm whitespace-pre-wrap overflow-auto font-mono text-slate-700 border border-slate-200">
-          {prompt || <span className="text-slate-400">左のメニューから業務を選択し、情報を入力してください。</span>}
+          {children ? (
+             children
+          ) : prompt ? (
+            prompt
+          ) : (
+            <span className="text-slate-400">{placeholder || defaultPlaceholder}</span>
+          )}
         </pre>
       </div>
       <button
